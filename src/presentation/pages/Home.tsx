@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../styles/StarWarsIntro.css";
+import Button from "../components/Ui/VIewMoreButton";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -41,6 +43,13 @@ export const Home = () => {
     Luke's whereabouts....
   `;
 
+
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/starships");
+  }
+
   return (
     <>
       <div className="star-wars-intro">
@@ -60,6 +69,7 @@ export const Home = () => {
               Wars universe.
             </p>
             <p>Click on any starship to learn more about it!</p>
+            <Button onClick={handleClick}>View Starships</Button>
           </div>
         )}
       </div>
