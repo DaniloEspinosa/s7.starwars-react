@@ -1,4 +1,4 @@
-import "../../../styles/Ui/Button.css";
+import "../../../styles/Ui/ViewMoreButton.css";
 
 interface Props {
     onClick: () => void;
