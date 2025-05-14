@@ -7,8 +7,7 @@
 }
 
 .logo {
-    width: 160px;
-    height: auto;
+    width: 260px;
 }
 
 .auth-links {
@@ -21,7 +20,7 @@
     .header {
         flex-direction: row;
         justify-content: space-between;
-        padding: 1rem 2rem;
+        padding: 2rem;
     }
 
     .auth-links {
