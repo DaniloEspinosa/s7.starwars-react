@@ -1,4 +1,4 @@
-import type { Starship } from "../../domain/models/Starships";
+import type { Starship } from "../../domain/models/StarshipsI";
 
 const API_URL = 'https://swapi.py4e.com/api/starships/';
 

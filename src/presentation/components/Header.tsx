@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import starWarsLogo from '../../assets/logo-sw-pagina-oficial.png';
 import '../../styles/Header.css';
 import LogSignButton from './Ui/LogSignButton';
-import StarField from './Ui/StarField';
+import StarField from './animations/StarField';
 
 const Header: React.FC = () => (
   <header className="header">

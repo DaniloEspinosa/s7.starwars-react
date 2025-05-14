@@ -1,15 +1,13 @@
-import { useEffect, useState } from 'react';
-import '../../styles/StarWarsIntro.css';
-import StarField from '../components/Ui/StarField';
+import { useEffect, useState } from "react";
+import "../../styles/StarWarsIntro.css";
 
 export const Home = () => {
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
-    // Ocultar el intro después de 60 segundos (duración de la animación)
     const timer = setTimeout(() => {
       setShowIntro(false);
-    }, 60000);
+    }, 18000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -49,7 +47,7 @@ export const Home = () => {
         {showIntro ? (
           <div className="crawl">
             <div className="crawl-content">
-              {introText.split('\n').map((line, index) => (
+              {introText.split("\n").map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
             </div>
@@ -57,7 +55,10 @@ export const Home = () => {
         ) : (
           <div className="intro-text">
             <h1>Welcome to Star Wars App</h1>
-            <p>Explore the galaxy and discover all the starships from the Star Wars universe.</p>
+            <p>
+              Explore the galaxy and discover all the starships from the Star
+              Wars universe.
+            </p>
             <p>Click on any starship to learn more about it!</p>
           </div>
         )}

@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import type { Starship } from '../../domain/models/Starships';
+import type { StarshipI } from '../../domain/models/StarshipsI';
 import { fetchStarships } from '../../data/starships/starshipsRepository';
 
 interface StarshipsState {
-  items: Starship[];
+  items: StarshipI[];
   nextPage: string | null;
   loading: boolean;
   error: string | null;
@@ -38,7 +38,7 @@ const starshipsSlice = createSlice({
         state.loading = false;
         const existingUrls = new Set(state.items.map(item => item.url));
         const newItems = action.payload.results.filter(
-          (item: Starship) => !existingUrls.has(item.url)
+          (item: StarshipI) => !existingUrls.has(item.url)
         );
         state.items = [...state.items, ...newItems];
         state.nextPage = action.payload.next;
