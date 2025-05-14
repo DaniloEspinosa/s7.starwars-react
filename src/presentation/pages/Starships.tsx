@@ -1,25 +1,60 @@
 import { useEffect, useState } from "react";
 import type { Starship } from "../../domain/models/Starships";
-import { fetchStarships } from "../../data/starships/starshipsRepository";
+import StarshipModal from "../components/StarshipModal";
+import { useDispatch, useSelector } from "react-redux";
+import type { AppDispatch, RootState } from "../../store/store";
+import { fetchStarshipsAsync } from "../../store/features/starshipsSlice";
+import Button from "../components/Ui/Button";
 
 export const StarshipsPage = () => {
-  const [starships, setStarships] = useState<Starship[]>([]);
+  const dispatch = useDispatch<AppDispatch>();
+  const { items: starships, nextPage, loading } = useSelector((state: RootState) => state.starships);
+  const [selectedStarship, setSelectedStarship] = useState<Starship | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    fetchStarships().then(setStarships);
-  }, []);
+    dispatch(fetchStarshipsAsync());
+  }, [dispatch]);
+
+  const fetchMoreStarships = () => {
+    if (!nextPage || loading) return;
+    dispatch(fetchStarshipsAsync(nextPage));
+  };
+
+  const handleStarshipClick = (starship: Starship) => {
+    setSelectedStarship(starship);
+    setModalOpen(true);
+  };
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Starships</h1>
-      <ul className="space-y-2">
-        {starships.map((ship) => (
-          <li key={ship.name} className="p-4 bg-gray-800 text-white rounded-lg">
-            <h2 className="text-xl">{ship.name}</h2>
-            <p>{ship.model}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className="p-4">
+        <h1 className="text-2xl font-bold mb-4">Starships</h1>
+        <ul className="space-y-2">
+          {starships.map((starship) => (
+            <li key={starship.model} className="p-4 bg-gray-800 text-white rounded-lg"
+              onClick={() => handleStarshipClick(starship)}
+              style={{ cursor: 'pointer' }}>
+              <h2 className="text-xl">{starship.name}</h2>
+              <p>{starship.model}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {nextPage && (
+        <Button
+          onClick={fetchMoreStarships}
+          disabled={loading}
+          loading={loading}
+        >
+          View More
+        </Button>
+      )}
+      <StarshipModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        starship={selectedStarship}
+      />
+    </>
   );
 };

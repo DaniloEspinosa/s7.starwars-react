@@ -1,0 +1,27 @@
+.button {
+    margin: 2rem auto;
+    display: block;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+}
+
+.spinner {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    border: 2px solid #fff;
+    border-top: 2px solid #222;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,3 +1,8 @@
+:root {
+  --header-height: 60px;
+  --navbar-height: 48px;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +44,34 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+/* Móvil primero */
+body {
+  font-size: 16px;
+  margin: 0;
+  background: #111;
+  color: #fff;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* Ordenador */
+@media (min-width: 900px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
 }
