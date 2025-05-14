@@ -5,4 +5,5 @@ export interface Starship {
   starship_class: string;
   crew: string;
   passengers: string;
+  url: string; // URL única de la API de Star Wars
 }

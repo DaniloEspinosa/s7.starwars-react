@@ -36,7 +36,11 @@ const starshipsSlice = createSlice({
       })
       .addCase(fetchStarshipsAsync.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = [...state.items, ...action.payload.results];
+        const existingUrls = new Set(state.items.map(item => item.url));
+        const newItems = action.payload.results.filter(
+          (item: Starship) => !existingUrls.has(item.url)
+        );
+        state.items = [...state.items, ...newItems];
         state.nextPage = action.payload.next;
       })
       .addCase(fetchStarshipsAsync.rejected, (state, action) => {
