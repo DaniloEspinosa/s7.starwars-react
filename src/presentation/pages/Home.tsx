@@ -9,7 +9,7 @@ export const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
-    }, 18000);
+    }, 17000);
 
     return () => clearTimeout(timer);
   }, []);
