@@ -3,8 +3,12 @@ import starWarsLogo from '../../assets/logo-sw-pagina-oficial.png';
 import '../../styles/Header.css';
 import LogSignButton from './Ui/LogSignButton';
 import StarField from './animations/StarField';
+import Navbar from './Navbar';
 
 const Header: React.FC = () => (
+  <>
+  
+  
   <header className="header">
       <StarField />
 
@@ -14,6 +18,8 @@ const Header: React.FC = () => (
       <Link to="/signup"><LogSignButton>SIGN UP</LogSignButton></Link>
     </div>
   </header>
+  <Navbar />
+  </>
 );
 
 export default Header;

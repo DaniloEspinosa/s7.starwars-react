@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "../../styles/StarWarsIntro.css";
 import Button from "../components/Ui/VIewMoreButton";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 
 export const Home = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -43,7 +45,6 @@ export const Home = () => {
     Luke's whereabouts....
   `;
 
-
   const navigate = useNavigate();
 
   function handleClick() {
@@ -52,6 +53,7 @@ export const Home = () => {
 
   return (
     <>
+      <Header />
       <div className="star-wars-intro">
         {showIntro ? (
           <div className="crawl">
