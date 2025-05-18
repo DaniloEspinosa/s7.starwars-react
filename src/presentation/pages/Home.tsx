@@ -53,7 +53,6 @@ export const Home = () => {
 
   return (
     <>
-      <Header />
       <div className="star-wars-intro">
         {showIntro ? (
           <div className="crawl">
