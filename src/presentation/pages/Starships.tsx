@@ -6,7 +6,6 @@ import type { AppDispatch, RootState } from "../../store/store";
 import { fetchStarshipsAsync } from "../../store/features/starshipsSlice";
 import InfiniteScroll from "../components/Ui/InfiniteScroll";
 import Starship from "../components/Starship";
-import Header from "../components/Header";
 import { useAuth } from "../../infra/api/useAuth";
 import { useNavigate } from "react-router-dom";
 import StarWarpField from "../components/animations/StarWarpField";
