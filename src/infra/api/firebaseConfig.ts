@@ -2,14 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCkfB491bWwgK3gjSH_da4JEsqDIIzHWpw",
-    authDomain: "star-wars-danilo.firebaseapp.com",
-    databaseURL: "https://star-wars-danilo-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "star-wars-danilo",
-    storageBucket: "star-wars-danilo.firebasestorage.app",
-    messagingSenderId: "888074383902",
-    appId: "1:888074383902:web:175852364dc4f3aa48b40f"
-  };
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+};
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
