@@ -4,6 +4,7 @@ import { LoginPage } from "../pages/Login";
 import { SignUpPage } from "../pages/SignUp";
 import { Home } from "../pages/Home";
 import MainLayout from "../components/MainLayout";
+import PrivateRoute from "../components/PrivateRoute";
 
 export const AppRouter = () => (
   <Routes>
@@ -18,9 +19,11 @@ export const AppRouter = () => (
     <Route
       path="/starships"
       element={
-        <MainLayout>
-          <StarshipsPage />
-        </MainLayout>
+        <PrivateRoute>
+          <MainLayout>
+            <StarshipsPage />
+          </MainLayout>
+        </PrivateRoute>
       }
     />
     <Route path="/login" element={<LoginPage />} />

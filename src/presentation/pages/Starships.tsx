@@ -6,29 +6,18 @@ import type { AppDispatch, RootState } from "../../store/store";
 import { fetchStarshipsAsync } from "../../store/features/starshipsSlice";
 import InfiniteScroll from "../components/Ui/InfiniteScroll";
 import Starship from "../components/Starship";
-import { useAuth } from "../../infra/api/useAuth";
-import { useNavigate } from "react-router-dom";
-import StarWarpField from "../components/animations/StarWarpField";
 
 export const StarshipsPage = () => {
-
-  const user = useAuth();
-  const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const {
     items: starships,
     nextPage,
     loading,
   } = useSelector((state: RootState) => state.starships);
-  const [selectedStarship, setSelectedStarship] = useState<StarshipI | null>(null);
+  const [selectedStarship, setSelectedStarship] = useState<StarshipI | null>(
+    null
+  );
   const [modalOpen, setModalOpen] = useState(false);
-
-  useEffect(() => {
-    if (user === undefined) return;
-    if (user === null) {
-      navigate("/login");
-    }
-  }, [user, navigate]);
 
   useEffect(() => {
     dispatch(fetchStarshipsAsync());
@@ -44,9 +33,6 @@ export const StarshipsPage = () => {
     setModalOpen(true);
   };
 
-  if (user === undefined) {
-    return <StarWarpField />;
-  }
   return (
     <>
       <div className="p-4">
