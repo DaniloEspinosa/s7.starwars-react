@@ -1,7 +1,8 @@
 import React from "react";
 import starWarsLogo from "../../assets/star-wars.svg";
 import "../../styles/StarshipModal.css";
-import { usePilots } from "../../hooks/usePilots"; // importa el hook
+import { usePilots } from "../../hooks/usePilots";
+import { useFilms } from "../../hooks/useFilms";
 
 interface StarshipModalProps {
   isOpen: boolean;
@@ -14,7 +15,8 @@ const StarshipModal: React.FC<StarshipModalProps> = ({
   onClose,
   starship,
 }) => {
-  const { pilots, loading } = usePilots(starship?.pilots);
+  const { pilots, loadingPilots } = usePilots(starship?.pilots);
+  const { films, loadingFilms } = useFilms(starship?.films);
 
   if (!isOpen || !starship) return null;
 
@@ -38,12 +40,25 @@ const StarshipModal: React.FC<StarshipModalProps> = ({
         {/* Pilotos */}
         <div>
           <strong>Pilotos:</strong>
-          {loading && <p>Cargando pilotos...</p>}
-          {!loading && pilots.length === 0 && <p>No hay pilotos.</p>}
-          {!loading && pilots.length > 0 && (
+          {loadingPilots && <p>Cargando pilotos...</p>}
+          {!loadingPilots && pilots.length === 0 && <p>No hay pilotos.</p>}
+          {!loadingPilots && pilots.length > 0 && (
             <ul>
               {pilots.map((pilot) => (
                 <li key={pilot.url}>{pilot.name}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+        {/* Peliculas */}
+        <div>
+          <strong>Películas:</strong>
+          {loadingFilms && <p>Cargando películas...</p>}
+          {!loadingFilms && films.length === 0 && <p>No aparece en ninguna película.</p>}
+          {!loadingFilms && films.length > 0 && (
+            <ul>
+              {films.map((film) => (
+                <li key={film.url}>{film.title}</li>
               ))}
             </ul>
           )}

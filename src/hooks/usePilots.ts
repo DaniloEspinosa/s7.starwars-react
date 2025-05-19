@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export function usePilots(pilotUrls: string[] = []) {
   const [pilots, setPilots] = useState<any[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loadingPilots, setLoading] = useState(false);
 
   useEffect(() => {
     if (!pilotUrls || pilotUrls.length === 0) {
@@ -17,5 +17,5 @@ export function usePilots(pilotUrls: string[] = []) {
     // El truco: usar JSON.stringify para comparar el contenido del array
   }, [JSON.stringify(pilotUrls)]);
 
-  return { pilots, loading };
+  return { pilots, loadingPilots };
 }
