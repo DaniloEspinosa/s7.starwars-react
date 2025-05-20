@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { StarshipI } from "../../domain/models/StarshipsI";
+import type { StarshipI } from "../../models/StarshipsI";
 import StarshipModal from "../components/StarshipModal";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../../store/store";

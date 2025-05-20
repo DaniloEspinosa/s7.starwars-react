@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import StarField from "../components/animations/StarField";
 import CloseButton from "../components/Ui/CloseButton";
-import { signUp } from "../../infra/api/firebaseAuthHelpers";
+import { signUp } from "../../firebase/firebaseAuthHelpers";
 
 export const SignUpPage = () => {
   const navigate = useNavigate();

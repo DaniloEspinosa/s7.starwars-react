@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/Header.css";
-import LogSignButton from "./Ui/Button";
+import Button from "./Ui/Button";
 import StarField from "./animations/StarField";
 import Navbar from "./Navbar";
-import { useAuth } from "../../infra/api/useAuth";
-import { logout } from "../../infra/api/firebaseAuthHelpers";
+import { useAuth } from "../../firebase/useAuth";
+import { logout } from "../../firebase/firebaseAuthHelpers";
 
 const Header = () => {
   const user = useAuth();
@@ -31,17 +31,15 @@ const Header = () => {
           {user ? (
             <>
               <span className="font-semibold">Logeado</span>
-              <button onClick={handleLogout}>
-                <LogSignButton>Logout</LogSignButton>
-              </button>
+              <Button onClick={handleLogout}>Logout</Button>
             </>
           ) : (
             <>
               <Link to="/login">
-                <LogSignButton>Login</LogSignButton>
+                <Button>Login</Button>
               </Link>
               <Link to="/signup">
-                <LogSignButton>Signup</LogSignButton>
+                <Button>Signup</Button>
               </Link>
             </>
           )}

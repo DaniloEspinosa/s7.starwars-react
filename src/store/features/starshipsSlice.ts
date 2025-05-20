@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import type { StarshipI } from '../../domain/models/StarshipsI';
+import type { StarshipI } from '../../models/StarshipsI';
 import { fetchStarships } from '../../data/starships/starshipsRepository';
 
 interface StarshipsState {

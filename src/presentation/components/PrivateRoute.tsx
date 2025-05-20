@@ -1,4 +1,4 @@
-import { useAuth } from "../../infra/api/useAuth";
+import { useAuth } from "../../firebase/useAuth";
 import { Navigate } from "react-router-dom";
 import StarWarpField from "./animations/StarWarpField";
 
