@@ -6,7 +6,7 @@ import { signUp } from "../../infra/api/firebaseAuthHelpers";
 
 export const SignUpPage = () => {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -47,18 +47,7 @@ export const SignUpPage = () => {
           </p>
 
           <form className="space-y-6" onSubmit={handleSubmit}>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Name"
-              required
-              value={form.name}
-              onChange={handleChange}
-              className="w-full bg-slate-200 text-black px-4 py-2 rounded border-b-2 border-white
-              focus:outline-none focus:ring-2 focus:ring-white
-              hover:border-b-2 hover:border-slate-300"
-            />
+
 
             <input
               id="email"

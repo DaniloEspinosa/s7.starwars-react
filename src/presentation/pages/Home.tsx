@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../../styles/StarWarsIntro.css";
-import Button from "../components/Ui/VIewMoreButton";
+import Button from "../components/Ui/Button";
 import { useNavigate } from "react-router-dom";
 
 
@@ -63,12 +63,12 @@ export const Home = () => {
           </div>
         ) : (
           <div className="intro-text">
-            <h1>Welcome to Star Wars App</h1>
-            <p>
+            <h1 className="text-6xl mb-5 font-bold">Welcome to Star Wars App</h1>
+            <p className="text-3xl">
               Explore the galaxy and discover all the starships from the Star
               Wars universe.
             </p>
-            <p>Click on any starship to learn more about it!</p>
+            <p className="text-2xl mt-4 mb-6">Click on any starship to learn more about it!</p>
             <Button onClick={handleClick}>View Starships</Button>
           </div>
         )}
