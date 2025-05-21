@@ -2,6 +2,10 @@
 
 Una aplicación web interactiva que te permite explorar el universo de Star Wars, específicamente enfocada en las naves espaciales de la saga.
 
+## Demo 🎮
+
+Puedes ver la aplicación en funcionamiento aquí: [Star Wars App](https://s7-starwars-react.vercel.app/)
+
 ## Características ✨
 
 - 🎬 Animación de introducción estilo Star Wars
@@ -9,6 +13,18 @@ Una aplicación web interactiva que te permite explorar el universo de Star Wars
 - 🔍 Detalles detallados de cada nave
 - 🎨 Diseño moderno y responsivo
 - 🌙 Tema oscuro inspirado en Star Wars
+
+## TODO List 📝
+
+### Mejoras Pendientes
+- [ ] Agregar iconos a la aplicación
+- [ ] Mejorar la UI de la página de starships
+- [ ] Mejorar la UI del modal (mejor diagramación)
+- [ ] Incorporar Storybook para documentación de componentes
+- [ ] Agregar imágenes de:
+  - [ ] Naves espaciales
+  - [ ] Películas
+  - [ ] Pilotos
 
 ## Tecnologías Utilizadas 🛠
 
