@@ -1,4 +1,4 @@
-import type { StarshipI } from "../../models/StarshipsI";
+import type { StarshipI } from "../../../models/StarshipsI";
 
 interface Props {
   starship: StarshipI;

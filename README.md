@@ -20,7 +20,11 @@ Puedes ver la aplicación en funcionamiento aquí: [Star Wars App](https://s7-st
 - [ ] Agregar iconos a la aplicación
 - [ ] Mejorar la UI de la página de starships
 - [ ] Mejorar la UI del modal (mejor diagramación)
-- [ ] Incorporar Storybook para documentación de componentes
+- [ ] Agregar avatar en el perfil loged
+- [ ] Agregar validaciones para mail y contraseña
+- [ ] Agregar un doble campo de contraseña al momento de crear un nuevo perfil
+- [ ] Agregar la opcion de ver la contraseña u ocultarla
+- [x] Incorporar Storybook para documentación de componentes
 - [ ] Agregar imágenes de:
   - [ ] Naves espaciales
   - [ ] Películas
